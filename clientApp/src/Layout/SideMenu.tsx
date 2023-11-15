@@ -1,5 +1,5 @@
 import { usePathname } from "next/navigation";
-import TextSnippetIcon from '@mui/icons-material/TextSnippet';
+import WorkIcon from '@mui/icons-material/Work';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import Link from "next/link";
 
@@ -22,8 +22,8 @@ export default function SideMenu(props: SideMenuProps) {
                 <ul style={{paddingTop: "5px", paddingLeft: "5px", paddingRight: "5px"}} className="flex flex-col pl-1 pr-1 pt-2 mt-4 font-medium bg-gray-50 rtl:space-x-reverse">
                     <li style={{marginBottom: "5px"}}>
                         <Link href="/Notes" className={getMenuItemClassName("/Notes")} style={{display: "flex", alignItems: "center"}}>
-                            <TextSnippetIcon style={{fontSize: "1.5em", marginRight: "5px"}} className="MenuItemIcon"></TextSnippetIcon>
-                            <span>Notes</span>
+                            <WorkIcon style={{fontSize: "1.5em", marginRight: "5px"}} className="MenuItemIcon"></WorkIcon>
+                            <span>Jobs</span>
                         </Link>
                     </li>
                     <li>
