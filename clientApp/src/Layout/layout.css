@@ -1,0 +1,16 @@
+.activeMenu {
+    color:rgb(215, 219, 255);
+    background-color: rgb(235, 235, 235);
+    border-radius: 6px;
+    color:rgb(65 34 153 / 79%)
+  }
+
+  #sideMenu.closed a span {
+    display: none;
+  }
+
+  #sideMenu.closed a .MenuItemIcon {
+    position: relative;
+    left: 0px;
+    font-size: 2em !important;
+  }
