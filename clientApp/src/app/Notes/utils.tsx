@@ -13,9 +13,9 @@ export interface Interviews {
     type: InterviewType
 }
 export interface JobApplication {
-    company: string,
-    title: string,
-    description: string,
-    notes: string,
-    interviews: Interviews[]
+    company: string | undefined,
+    role: string | undefined,
+    description: string | undefined,
+    notes: string | undefined,
+    interviews: Interviews[] | undefined
 }

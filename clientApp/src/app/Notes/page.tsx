@@ -7,7 +7,7 @@ export default function Page() {
     const myJobs: JobApplication[] = [
         {
             company: "Comp 1",
-            title: "Senior developer",
+            role: "Senior developer",
             description: "software dev description",
             notes: "note exemple",
             interviews: [
@@ -25,7 +25,7 @@ export default function Page() {
         },
         {
             company: "Comp 2",
-            title: "Senior developer",
+            role: "Senior developer",
             description: " descriptionsoftware dev descriptionsoftware dev descriptionsoftware dev",
             notes: "",
             interviews: [
@@ -53,7 +53,7 @@ export default function Page() {
         },        
         {
             company: "Comp 2",
-            title: "Senior developer",
+            role: "Senior developer",
             description: "software dev description",
             notes: "",
             interviews: [
@@ -66,14 +66,14 @@ export default function Page() {
         },
         {
             company: "Comp 2",
-            title: "Senior developer",
+            role: "Senior developer",
             description: "software dev description",
             notes: "",
             interviews: []
         } ,
         {
             company: "Comp 2",
-            title: "Senior developer",
+            role: "Senior developer",
             description: "escriptionsoftware dev descriptionsoftware dev descriptionsoftware dev descriptionsoftware dev description",
             notes: "",
             interviews: [
@@ -86,7 +86,7 @@ export default function Page() {
         },
         {
             company: "Comp 2",
-            title: "Senior developer",
+            role: "Senior developer",
             description: "software dev description",
             notes: "",
             interviews: [
@@ -99,7 +99,7 @@ export default function Page() {
         },
         {
             company: "Comp 2",
-            title: "Senior developer",
+            role: "Senior developer",
             description: "dev descriptionsoftware dev descriptionsoftware dev descriptionsoftware dev descriptionsoftware dev",
             notes: "",
             interviews: [

@@ -35,9 +35,7 @@ export default function JobsDisplay(props: JobsDisplayProps){
             <div className="grid grid-cols-3 gap-4">
                 {
                     props.jobs.map((job, key) => {
-                        return <>
-                            <JobCard job={job}></JobCard>
-                        </>
+                        return <JobCard key={key} job={job}></JobCard> 
                     })
                 }
             </div>
