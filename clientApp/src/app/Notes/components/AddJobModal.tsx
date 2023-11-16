@@ -10,7 +10,7 @@ export default function AddJobModal(props: AddJobModalProps) {
 
     return (
         <>
-            {/* <Modal isOpen={props.isOpen} onOpenChange={() => {}}>
+            <Modal isOpen={props.isOpen} onOpenChange={() => {}}>
                 <ModalContent>
                     {(onClose) => (
                         <>
@@ -45,7 +45,7 @@ export default function AddJobModal(props: AddJobModalProps) {
                         </>
                     )}
                 </ModalContent>
-            </Modal> */}
+            </Modal>
         </>
     )
 }

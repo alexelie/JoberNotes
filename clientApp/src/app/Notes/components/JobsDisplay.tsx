@@ -59,7 +59,7 @@ export default function JobsDisplay(props: JobsDisplayProps){
                                                         variant="faded"
                                                         color={color}
                                                     >
-                                                        {i.date.toLocaleString()}
+                                                        {i.date.toLocaleString("fr-FR")}
                                                     </Chip>
                                             )})
                                             
