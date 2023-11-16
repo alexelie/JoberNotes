@@ -1,20 +1,23 @@
 'use client'
 
 import { Button, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader } from "@nextui-org/react"
+import { JobApplication } from "../utils"
 
 interface AddJobModalProps {
-    isOpen: boolean
+    isOpen: boolean,
+    onClose: () => void,
+    onJobAdded: (job: JobApplication) => void
 }
 
 export default function AddJobModal(props: AddJobModalProps) {
 
     return (
         <>
-            <Modal isOpen={props.isOpen} onOpenChange={() => {}}>
+            <Modal isOpen={props.isOpen} size="3xl" onClose={()=>{props.onClose()}}>
                 <ModalContent>
                     {(onClose) => (
                         <>
-                            <ModalHeader className="flex flex-col gap-1">Modal Title</ModalHeader>
+                            <ModalHeader className="flex flex-col gap-1">Add job</ModalHeader>
                             <ModalBody>
                                 <p>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -39,7 +42,7 @@ export default function AddJobModal(props: AddJobModalProps) {
                                     Close
                                 </Button>
                                 <Button color="primary" onPress={onClose}>
-                                    Action
+                                    Add
                                 </Button>
                             </ModalFooter>
                         </>
