@@ -1,8 +1,9 @@
-'use client'
+"use client"
 
 import { Button, Input, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, Spacer, Textarea } from "@nextui-org/react"
 import { JobApplication } from "../utils"
 import { useState } from "react";
+import { jobService } from "@/app/apiServices/jobService";
 
 interface AddJobModalProps {
     isOpen: boolean,
@@ -20,15 +21,13 @@ const getDefaultForm = () => {
     }
 }
 export default function AddJobModal(props: AddJobModalProps) {
-
     const [jobForm, setJobForm] = useState<JobApplication>(getDefaultForm());
 
     function addJob(){
-        window.console.log(jobForm)
         const newJob = {...jobForm}
 
         //send job to backend
-        
+        jobService.addJob(newJob);
 
         //close modal
         props.onClose()
@@ -52,7 +51,6 @@ export default function AddJobModal(props: AddJobModalProps) {
         })
     }
 
-
     return (
         <>
             <Modal isOpen={props.isOpen} size="xl" onClose={()=>{props.onClose()}}>
@@ -68,7 +66,6 @@ export default function AddJobModal(props: AddJobModalProps) {
                                         onChange={onChangeInput}
                                         name="description"
                                         className="mb-4 w-full"
-                                        label="Description"
                                         placeholder="Enter your description"
                                         />
                                 </div>

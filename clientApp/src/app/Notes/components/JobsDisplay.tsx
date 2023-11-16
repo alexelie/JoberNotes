@@ -1,13 +1,10 @@
-'use client'
+"use client"
 
-import { Card, CardHeader, Textarea, Image, Divider, CardBody, CardFooter, Link, Chip, Spacer } from "@nextui-org/react";
 import {Button} from "@nextui-org/react";
-import { InterviewType, JobApplication } from "../utils";
-import AddIcon from '@mui/icons-material/Add';
+import { JobApplication } from "../utils";
 import { useState } from "react";
 import AddJobModal from "./AddJobModal";
 import JobCard from "./JobCard";
-
 
 export interface JobsDisplayProps{
     jobs: JobApplication[]

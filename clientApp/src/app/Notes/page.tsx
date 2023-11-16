@@ -1,4 +1,4 @@
-'use client'
+"use client"
 
 import JobsDisplay from "./components/JobsDisplay";
 import { InterviewType, JobApplication } from "./utils";

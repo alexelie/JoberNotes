@@ -1,3 +1,5 @@
+"use client"
+
 import { Button, Card, CardBody, CardFooter, CardHeader, Chip, Divider, Spacer } from "@nextui-org/react"
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import HourglassBottomIcon from '@mui/icons-material/HourglassBottom';
