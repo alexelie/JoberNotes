@@ -15,6 +15,7 @@ export interface Interviews {
 export interface JobApplication {
     company: string,
     title: string,
+    description: string,
     notes: string,
     interviews: Interviews[]
 }
