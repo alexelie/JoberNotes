@@ -1,151 +1,24 @@
 "use client"
 
+import { useEffect, useState } from "react";
 import JobsDisplay from "./components/JobsDisplay";
-import { InterviewType, JobApplication } from "./utils";
+import { JobApplication } from "./utils";
+import { jobService } from "../apiServices/jobService";
 
 export default function Page() {
-    const myJobs: JobApplication[] = [
-        {
-            company: "Comp 1",
-            role: "Senior developer",
-            description: "software dev description",
-            notes: "note exemple",
-            interviews: [
-                {
-                    date: new Date('November 13, 2023 14:30:00'),
-                    person: "mr. interview",
-                    type: InterviewType.FirstCall
-                },
-                {
-                    date: new Date('November 23, 2023 14:30:00'),
-                    person: "mr. interview",
-                    type: InterviewType.FirstInterview
-                }
-            ]
-        },
-        {
-            company: "Comp 2",
-            role: "Senior developer",
-            description: " descriptionsoftware dev descriptionsoftware dev descriptionsoftware dev",
-            notes: "",
-            interviews: [
-                {
-                    date: new Date('November 9, 2023 15:30:00'),
-                    person: "mr. interview",
-                    type: InterviewType.FirstCall
-                },
-                {
-                    date: new Date('November 12, 2023 15:30:00'),
-                    person: "mr. interview",
-                    type: InterviewType.FirstInterview
-                },
-                {
-                    date: new Date('November 14, 2023 15:30:00'),
-                    person: "mr. interview",
-                    type: InterviewType.SecondInterview
-                },
-                {
-                    date: new Date('December 9, 2023 15:30:00'),
-                    person: "mr. interview",
-                    type: InterviewType.ThirdInterview
-                }
-            ]
-        },        
-        {
-            company: "Comp 2",
-            role: "Senior developer",
-            description: "software dev description",
-            notes: "",
-            interviews: [
-                {
-                    date: new Date('December 9, 2023 15:30:00'),
-                    person: "mr. interview",
-                    type: InterviewType.FirstCall
-                }
-            ]
-        },
-        {
-            company: "Comp 2",
-            role: "Senior developer",
-            description: "software dev description",
-            notes: "",
-            interviews: []
-        } ,
-        {
-            company: "Comp 2",
-            role: "Senior developer",
-            description: "escriptionsoftware dev descriptionsoftware dev descriptionsoftware dev descriptionsoftware dev description",
-            notes: "",
-            interviews: [
-                {
-                    date: new Date('December 9, 2023 15:30:00'),
-                    person: "mr. interview",
-                    type: InterviewType.FirstCall
-                }
-            ]
-        },
-        {
-            company: "Comp 2",
-            role: "Senior developer",
-            description: "software dev description",
-            notes: "",
-            interviews: [
-                {
-                    date: new Date('December 9, 2023 15:30:00'),
-                    person: "mr. interview",
-                    type: InterviewType.FirstCall
-                }
-            ]
-        },
-        {
-            company: "Comp 2",
-            role: "Senior developer",
-            description: "dev descriptionsoftware dev descriptionsoftware dev descriptionsoftware dev descriptionsoftware dev",
-            notes: "",
-            interviews: [
-                {
-                    date: new Date('November 9, 2023 15:30:00'),
-                    person: "mr. interview",
-                    type: InterviewType.FirstCall
-                },
-                {
-                    date: new Date('November 12, 2023 15:30:00'),
-                    person: "mr. interview",
-                    type: InterviewType.FirstInterview
-                },
-                {
-                    date: new Date('November 14, 2023 15:30:00'),
-                    person: "mr. interview",
-                    type: InterviewType.SecondInterview
-                },
-                {
-                    date: new Date('December 9, 2023 15:30:00'),
-                    person: "mr. interview",
-                    type: InterviewType.ThirdInterview
-                },
-                {
-                    date: new Date('November 9, 2023 15:30:00'),
-                    person: "mr. interview",
-                    type: InterviewType.FirstCall
-                },
-                {
-                    date: new Date('November 12, 2023 15:30:00'),
-                    person: "mr. interview",
-                    type: InterviewType.FirstInterview
-                },
-                {
-                    date: new Date('November 14, 2023 15:30:00'),
-                    person: "mr. interview",
-                    type: InterviewType.SecondInterview
-                },
-                {
-                    date: new Date('December 9, 2023 15:30:00'),
-                    person: "mr. interview",
-                    type: InterviewType.ThirdInterview
-                }
-            ]
-        },        
-    ]
+    
+    const [jobs, setJobs] = useState<JobApplication[]>([])
+
+    async function fetchJobs(){
+        const jobs = await jobService.getJobs()
+
+        if(jobs) setJobs(jobs)
+    }
+
+    //Init
+    useEffect(() => {
+        fetchJobs();
+    }, []);
 
     return (
         <div style={{padding: "20px", flex: "1 1 0", overflowY: "auto"}}>
@@ -163,7 +36,7 @@ export default function Page() {
                 </div>
             </div>
             <div style={{marginBottom: "15px"}}></div>
-            <JobsDisplay jobs={myJobs}/>
+            <JobsDisplay jobs={jobs}/>
         </div>
     )
 }

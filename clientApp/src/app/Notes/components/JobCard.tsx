@@ -4,6 +4,7 @@ import { Button, Card, CardBody, CardFooter, CardHeader, Chip, Divider, Spacer }
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import HourglassBottomIcon from '@mui/icons-material/HourglassBottom';
 import { JobApplication } from "../utils";
+import dayjs from "dayjs";
 
 interface JobCardProps{
     job: JobApplication
@@ -31,8 +32,8 @@ export default function JobCard(props: JobCardProps){
                     props.job.interviews?.length == 0 ? "Aucune reponse"  
                     :
                     props.job.interviews?.map((i, key) => {
-                        const color = i.date > new Date() ? "warning" : "success"
-                        const icon = i.date > new Date() ? <HourglassBottomIcon/> : <CheckCircleIcon />
+                        const color = new Date(i.date) > new Date() ? "warning" : "success"
+                        const icon = new Date(i.date) > new Date() ? <HourglassBottomIcon/> : <CheckCircleIcon />
                         return (
                             <Chip
                                 className="mr-2 mb-2"
@@ -41,7 +42,9 @@ export default function JobCard(props: JobCardProps){
                                 variant="faded"
                                 color={color}
                             >
-                                {i.date.toLocaleString("fr-FR")}
+                                {
+                                    dayjs(i.date).format('DD/MM/YYYY HH:mm')
+                                }
                             </Chip>
                     )})
                     
