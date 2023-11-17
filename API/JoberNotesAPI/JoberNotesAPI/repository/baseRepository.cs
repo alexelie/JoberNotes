@@ -17,7 +17,14 @@ namespace JoberNotesAPI.repository
 
         public async Task<List<T>> GetAllAsync()
         {
-            return await _collection.Find(_ => true).ToListAsync();
+            try
+            {
+                return await _collection.Find(_ => true).ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
     }
 }

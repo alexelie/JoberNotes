@@ -54,69 +54,6 @@ app.MapGet("api/jobs", async (JobsService jobsService) =>
 {
     var jobs = await jobsService.GetAllAsync();
 
-
-
-    //var jobApplication = new Job()
-    //{
-    //    Company = "Comp1",
-    //    Role = "Senior dev",
-    //    Description = "Description",
-    //    Interviews = new List<Interview>()
-    //    {
-    //        new Interview()
-    //        {
-    //            Date = DateTime.Now.AddDays(-4),
-    //            Person = "Mr interviewer",
-    //            Type = InterviewType.FirstCall
-    //        },
-    //        new Interview()
-    //        {
-    //            Date = DateTime.Now.AddDays(-3),
-    //            Person = "Mr interviewer",
-    //            Type = InterviewType.SecondCall
-    //        },
-    //        new Interview()
-    //        {
-    //            Date = DateTime.Now.AddDays(2),
-    //            Person = "Mr interviewer",
-    //            Type = InterviewType.ThirdCall
-    //        }
-    //    }
-    //};
-
-    //var jobApplication2 = new Job()
-    //{
-    //    Company = "Comp2",
-    //    Role = "Senior dev",
-    //    Description = "Description",
-    //    Interviews = new List<Interview>()
-    //};
-
-    //var jobApplication3 = new Job()
-    //{
-    //    Company = "Comp3",
-    //    Role = "Senior dev",
-    //    Description = "Description",
-    //    Interviews = new List<Interview>()
-    //};
-
-    //var jobApplication4 = new Job()
-    //{
-    //    Company = "Comp4",
-    //    Role = "Senior dev",
-    //    Description = "Description",
-    //    Interviews = new List<Interview>()
-    //};
-
-    //var jobApplication5 = new Job()
-    //{
-    //    Company = "Comp5",
-    //    Role = "Senior dev",
-    //    Description = "Description",
-    //    Interviews = new List<Interview>()
-    //};
-    //var jobs = new List<Job>() { jobApplication, jobApplication2, jobApplication3, jobApplication4, jobApplication5 };
-
     return jobs;
 });
 
