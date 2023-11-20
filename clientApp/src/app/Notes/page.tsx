@@ -26,12 +26,12 @@ export default function Page() {
             <div style={{marginBottom: "15px"}}></div>
             <div style={{display: "flex", width: "100%"}}>
                 <div style={{flex: "1"}} className="mr-2 p-2 rounded border-1 border-stone-200">
-                    <h2 className="text-xl">Today's interviews</h2>
+                    <h2 className="text-xl">Today&apos;s interviews</h2>
                     <p>todo...</p>
                 </div>
 
                 <div style={{flex: "1"}} className="p-2 rounded border-1 border-stone-200">
-                    <h2 className="text-xl">Tomorrow's interviews</h2>
+                    <h2 className="text-xl">Tomorrow&apos;s interviews</h2>
                     <p>todo...</p>
                 </div>
             </div>

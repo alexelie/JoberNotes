@@ -20,7 +20,7 @@ export default function JobCard(props: JobCardProps){
                 <p className="text-small text-default-500">{props.job.company}</p>
             </div>
             <Button color="danger" variant="ghost">
-                Didn't work out
+                Didn&apos;t work out
             </Button>
         </CardHeader>
         <Divider />
