@@ -1,15 +1,13 @@
-﻿using JoberNotesAPI.Models;
-using JoberNotesAPI.repository;
-using Microsoft.Extensions.Options;
-using MongoDB.Driver;
+﻿using JoberNotesAPI.Interfaces;
+using JoberNotesAPI.Models;
 
 namespace JoberNotesAPI.Services
 {
-    public class JobsService
+    public class JobService: IJobService
     {
-        private readonly JobRepository JobRepo;
+        private readonly IJobRepository JobRepo;
 
-        public JobsService(JobRepository jobRepo)
+        public JobService(IJobRepository jobRepo)
         {
             JobRepo = jobRepo;
         }

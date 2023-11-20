@@ -1,3 +1,4 @@
+using JoberNotesAPI.Interfaces;
 using JoberNotesAPI.Models;
 using JoberNotesAPI.repository;
 using JoberNotesAPI.Services;
@@ -17,8 +18,8 @@ builder.Services.AddSingleton<IMongoClient>((serviceProvider) => {
     return new MongoClient(config.Value.ConnectionString); 
 });
 
-builder.Services.AddScoped<JobRepository>();
-builder.Services.AddScoped<JobsService>();
+builder.Services.AddScoped<IJobRepository, JobRepository>();
+builder.Services.AddScoped<IJobService, JobService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -50,7 +51,7 @@ app.UseAuthorization();
 
 app.UseCors(specificOrigins);
 
-app.MapGet("api/jobs", async (JobsService jobsService) => 
+app.MapGet("api/jobs", async (IJobService jobsService) => 
 {
     var jobs = await jobsService.GetAllAsync();
 
